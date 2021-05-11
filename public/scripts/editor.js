@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8081';
+const baseURL = 'https://cs396-hw3-gmg.herokuapp.com';
 
 const initResetButton = () => {
     // if you want to reset your DB data, click this button:
@@ -196,6 +196,7 @@ function patchComp(id,docid){
     }); 
 }
 function addDoctor(){
+    cancel();
     document.getElementById("doctor").innerHTML=`<h4>Name</h4><input type="text" id="name_box"><br>
     <h4>Seasons</h4><input type="text" id="seasons_box"><br>
     <h4>Ordering</h4><input type="text" id="ordering_box"><br>

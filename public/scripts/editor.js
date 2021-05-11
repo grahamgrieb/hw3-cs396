@@ -223,7 +223,10 @@ function save(){
         'ordering' : document.getElementById("ordering_box").value,
         'image_url' : document.getElementById("img_box").value
     };
-        
+    if((!newDoc.name||!newDoc.seasons||!newDoc.ordering)){
+        document.getElementById("error").innerHTML=`Fix Data`;
+        return;
+    }
         
     fetch(`/doctors`, {
         method: 'POST',
@@ -261,7 +264,10 @@ function saveComp(docid){
         'ordering' : document.getElementById("ordering_box1").value,
         'image_url' : document.getElementById("img_box1").value
     };
-        
+    if((!newComp.name||!newComp.character||!newComp.seasons||!newComp.doctors||!newComp.ordering)){
+        document.getElementById("error_comp").innerHTML=`Fix Data`;
+        return;
+    }
         
     fetch(`/companions`, {
         method: 'POST',
